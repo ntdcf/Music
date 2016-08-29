@@ -25,6 +25,5 @@ public class TestModel {
         }
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         session = sqlSessionFactory.openSession();
-        System.out.println("ok!");
     }
 }
