@@ -12,5 +12,6 @@ public class TestInfo {
     public void TheTest() {
         TestModel testModel = new TestModel();
         testModel.create();
+        testModel.find();
     }
 }
