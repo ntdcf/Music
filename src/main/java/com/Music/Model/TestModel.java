@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * Created by luohao on 2016/8/29.
@@ -25,5 +26,12 @@ public class TestModel {
         }
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         session = sqlSessionFactory.openSession();
+    }
+
+    public void find() {
+        String Class="com.Music.Model.TestMapper.Test";
+
+        List list = session.selectList(Class);
+        System.out.println(list);
     }
 }
