@@ -10,12 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class IndexController {
-    /**
-     * @param username
-     * @return String
-     */
-    @RequestMapping(value="/")
-    public String index(@RequestParam("username") String username) {
+
+    @RequestMapping(value="/test")
+    public String index() {
         return "index";
     }
 }
