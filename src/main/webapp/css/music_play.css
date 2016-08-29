@@ -1,0 +1,35 @@
+
+/*播放器宽度*/
+#music_player {
+    width: 100%;
+}
+
+/*音乐信息*/
+#message {
+    background-color: peru;
+}
+/*菜单*/
+#menu {
+    float: left;
+    width: 20%;
+    background-color: blue;
+}
+
+#head {
+    background-color: #3A5FCD;
+}
+
+#control{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 200px;
+    border:none;
+    color:#fff;
+    margin-top: -75px;
+    margin-left:-75px;
+    left:50%; top:50%;
+    position: absolute;
+    box-shadow: #888 0 0 8px;
+}
