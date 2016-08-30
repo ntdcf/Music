@@ -1,35 +1,55 @@
+/*@font-face {*/
+    /*font-family: "STXIHEI";*/
+    /*src: url("../fonts/STXIHEI.TTF");*/
+/*}*/
+* {
+    margin: 0;
+    padding: 0;
+}
+#all {
+    background-color: #218868;
+}
+body {
+    background-color: #43CD80;
+    font-family: STXIHEI;
+    font-weight: bold;
+    font-size: 18px;
+    color: #262626;
+}
 
 /*播放器宽度*/
 #music_player {
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
-
+#audio {
+    width: 100%;
+}
 /*音乐信息*/
-#message {
-    background-color: peru;
+#search {
+    background-color: #3CB371;
 }
 /*菜单*/
 #menu {
-    float: left;
-    width: 20%;
-    background-color: blue;
+    height:auto!important;
+    /*background-color: #218868;*/
 }
 
 #head {
-    background-color: #3A5FCD;
+    height: 10%;
+    background-color: #458B74;
+    font-size: 20px;
 }
 
-#control{
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
-    text-align: center;
-    border-radius: 200px;
-    border:none;
-    color:#fff;
-    margin-top: -75px;
-    margin-left:-75px;
-    left:50%; top:50%;
-    position: absolute;
-    box-shadow: #888 0 0 8px;
+#music_info {
+    position: relative;
+}
+
+.menu {
+    height:auto;
+}
+.input {
+    background-color: transparent;
+    color: #ffffff;
 }
