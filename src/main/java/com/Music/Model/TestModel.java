@@ -30,7 +30,6 @@ public class TestModel {
 
     public void find() {
         String Class="com.Music.Model.TestMapper.Test";
-
         List list = session.selectList(Class);
         System.out.println(list);
     }
