@@ -1,5 +1,18 @@
-body {
-    font-family: STXIHEI;
-    font-size: 18px;
-    color: #ffffff;
+.login-form {
+    color: #5e5e5e;
+}
+.login-logo {
+    font-family: "Microsoft YaHei UI Light";
+    font-size: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+td {
+    padding-top: 20px;
+}
+
+
+table {
+    margin: 0 auto;
 }

@@ -1,3 +1,6 @@
+body {
+    font-family: STXIHEI;
+}
 .framestyle {
     width: 100%;
 }
@@ -9,8 +12,9 @@
 .barfoot {
     position: absolute;
     left:200px;
-    top: 13px;
-    width: 70%;
+    top: 35%;
+    width: 65%;
+    height: 30%;
     z-index: 999;
 }
 .nav-flow {
@@ -18,5 +22,5 @@
 }
 .nav>.play-list {
     position: absolute;
-    right: 5px;
+    right: 5%;
 }
