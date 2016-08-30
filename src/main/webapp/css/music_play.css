@@ -1,55 +1,22 @@
-/*@font-face {*/
-    /*font-family: "STXIHEI";*/
-    /*src: url("../fonts/STXIHEI.TTF");*/
-/*}*/
-* {
-    margin: 0;
-    padding: 0;
+.framestyle {
+    width: 100%;
 }
-#all {
-    background-color: #218868;
-}
-body {
-    background-color: #43CD80;
-    font-family: STXIHEI;
-    font-weight: bold;
-    font-size: 18px;
-    color: #262626;
-}
-
-/*播放器宽度*/
-#music_player {
+.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
 }
-#audio {
-    width: 100%;
+.barfoot {
+    position: absolute;
+    left:200px;
+    top: 13px;
+    width: 70%;
+    z-index: 999;
 }
-/*音乐信息*/
-#search {
-    background-color: #3CB371;
+.nav-flow {
+    float: left;
 }
-/*菜单*/
-#menu {
-    height:auto!important;
-    /*background-color: #218868;*/
-}
-
-#head {
-    height: 10%;
-    background-color: #458B74;
-    font-size: 20px;
-}
-
-#music_info {
-    position: relative;
-}
-
-.menu {
-    height:auto;
-}
-.input {
-    background-color: transparent;
-    color: #ffffff;
+.nav>.play-list {
+    position: absolute;
+    right: 5px;
 }
