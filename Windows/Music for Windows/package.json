@@ -1,0 +1,10 @@
+{
+    "main": "http://localhost:8080/Music/",
+    "name": "Hello NW.js",
+    "window": {
+
+        "title":"畅音阁",
+        "width":1100,
+        "height":600
+    }
+}
