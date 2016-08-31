@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,9 +31,8 @@ public class UserTableModel {
     }
 
     public List findUser(String username) {
-        String Class="com.Music.Model.UserTableMapper";
+        String Class="com.Music.Model.UserTableMapper.findUser";
         List<User> list = session.selectList(Class,username);
-        session.close();
         return list;
     }
 }

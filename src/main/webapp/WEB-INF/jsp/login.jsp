@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,7 @@
 <div class="login-form">
     <div class="login-logo"><img src="images/logo.png" height="90pxs">欢迎来到畅音阁</div>
     <div class="table-sty">
-        <form action="">
+        <form action="ActionLogin" method="post">
             <table>
                 <tr>
                     <td>用户名：</td>

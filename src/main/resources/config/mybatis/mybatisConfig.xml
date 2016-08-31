@@ -8,7 +8,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost/test"/>
+                <property name="url" value="jdbc:mysql://localhost/music"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
@@ -17,6 +17,7 @@
 
     <mappers>
         <mapper resource="config/mybatis/testSQL.xml"/>
+        <mapper resource="config/mybatis/UserTableMapper.xml"/>
     </mappers>
 
 </configuration>
