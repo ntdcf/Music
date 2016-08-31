@@ -6,6 +6,7 @@ create table musicMenu(
   music_singer   varchar(40) not null,           /*歌手*/
   music_special  varchar(40) not null,           /*专辑*/
   music_time     timestamp,                      /*时长*/
-  music_url      varchar(50)       not null,             /*歌曲url*/
-  music_listened_count  smallint  not null
+  music_url      varchar(300)       not null,             /*歌曲url*/
+  music_listened_count  smallint  not null,
+  music_introduce text
 );
