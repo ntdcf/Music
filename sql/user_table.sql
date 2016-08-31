@@ -7,5 +7,6 @@ create table usertable(
    User_name varchar(40)     not null,        /*姓名*/
    User_sex  char (2) check(User_sex in ('男','女')), /*性别*/
    User_age  smallint ,                        /*年龄*/
-   User_date  date                            /*生日*/
+   User_date  date  ,                          /*生日*/
+   admin tinyint(1)
 );
