@@ -40,5 +40,9 @@ public class LoginController {
         return "user";
     }
 
+    @RequestMapping(value = "addUser")
+    public String addUser(){
+        return "registered";
+    }
 
 }
