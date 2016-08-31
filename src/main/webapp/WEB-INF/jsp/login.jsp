@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,15 +46,15 @@
 <div class="login-form">
     <div class="login-logo"><img src="images/logo.png" height="90pxs">欢迎来到畅音阁</div>
     <div class="table-sty">
-        <form>
+        <form action="">
             <table>
                 <tr>
                     <td>用户名：</td>
-                    <td><input type="text" class="form-control" placeholder="请输入用户名"></td>
+                    <td><input type="text" name="username" class="form-control" placeholder="请输入用户名"></td>
                 </tr>
                 <tr>
                     <td>密码：</td>
-                    <td><input type="text" class="form-control" placeholder="请输入密码"></td>
+                    <td><input type="password" name="password" class="form-control" placeholder="请输入密码"></td>
                 </tr>
                 <tr>
                     <td><button type="submit" class="btn btn-default">登录</button></td>
