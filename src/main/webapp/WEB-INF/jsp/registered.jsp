@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: luohao
-  Date: 2016/8/29
-  Time: 22:30
+  Date: 2016/8/31
+  Time: 16:43
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">发现音乐<span class="sr-only">(current)</span></a></li>
+                    <li><a href="index">发现音乐<span class="sr-only">(current)</span></a></li>
                     <li><a href="#">我的收藏</a></li>
                     <li><a href="#">我的评论</a></li>
                     <li><a href="#">我的分享</a></li>
@@ -45,35 +45,57 @@
 </div>
 
 <div class="login-form">
-    <div class="login-logo"><img src="images/logo.png" height="90pxs">欢迎来到畅音阁</div>
+    <div class="login-logo">欢迎新用户注册</div>
     <div class="table-sty">
-        <form action="ActionLogin" method="post">
+        <form>
             <table>
                 <tr>
-                    <td>用户名：</td>
-                    <td><input type="text" name="username" class="form-control" placeholder="请输入用户名"></td>
+                    <td>*用户名：</td>
+                    <td><input type="text" name="username" id="username" class="form-control" placeholder="请输入用户名"></td>
                 </tr>
                 <tr>
-                    <td>密码：</td>
-                    <td><input type="password" name="password" class="form-control" placeholder="请输入密码"></td>
+                    <td>*密码：</td>
+                    <td><input type="password" name="password" id="password" class="form-control" placeholder="请输入密码"></td>
                 </tr>
                 <tr>
-                    <td><button type="submit" class="btn btn-default">登录</button></td>
+                    <td>*确认密码：</td>
+                    <td><input type="password" name="password2" id="password2" class="form-control" placeholder="请再次输入密码"></td>
+                </tr>
+                <tr>
+                    <td>*真实姓名：</td>
+                    <td><input type="text" name="name" id="name" class="form-control" placeholder="请输入您的真实姓名"></td>
+                </tr>
+                <tr>
+                    <td>*性别：</td>
+                    <td>
+                        <select name="user_sex" id="sex">
+                            <option value="1">男</option>
+                            <option value="0">女</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>年龄：</td>
+                    <td><input type="text" name="age" id="age" class="form-control" placeholder="请输入您的年龄"></td>
+                </tr>
+                <tr>
+                    <td>生日：</td>
+                    <td><input type="text" name="date" id="date" class="form-control" placeholder="请输入您的出生日期"></td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-default" id="btn_reg">注册</button></td>
                     <td><button type="reset" class="btn btn-default">重置</button></td>
-                </tr>
-                <tr>
-                    <td>没有用户名？</td>
-                    <td><a href="addUser">请注册</a></td>
                 </tr>
             </table>
         </form>
     </div>
 
 </div>
+
+
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/registered.js"></script>
 </html>
-
-
 
