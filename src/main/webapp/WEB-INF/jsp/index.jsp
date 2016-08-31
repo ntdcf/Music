@@ -30,9 +30,15 @@
                     </div>
                     <button type="submit" class="btn btn-default glyphicon glyphicon-search search"></button>
                 </form>
-                <ul class="nav navbar-nav">
-                    <li><a href="Login">登录</a></li>
+                <ul class='nav navbar-nav'>
+                    <li>
+                        <a href="${user_name == null ? "Login" : "#"}">
+                        用户：${user_name == null? "登录" : user_name}
+                        </a>
+                    </li>
                 </ul>
+
+
             </div>
         </div>
     </nav>

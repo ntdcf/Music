@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.Music.Model">
-    <select id="UserTableMapper" parameterType="String"
+<mapper namespace="com.Music.Model.UserTableMapper">
+    <select id="findUser" parameterType="String"
             resultType="com.Music.Model.DataIntance.User">
-        SELECT * FROM usertable
+        SELECT * FROM usertable where User_username = #{username}
     </select>
 </mapper>

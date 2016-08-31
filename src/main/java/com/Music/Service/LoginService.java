@@ -19,7 +19,7 @@ public class LoginService implements LoginInterface {
         userTableModel = new UserTableModel();
     }
 
-    public boolean findUser(String username, String password) {
+    public User findUser(String username, String password) {
         User loginUser = new User();
         loginUser.setUser_name(username);
         userTableModel.create();
@@ -27,9 +27,9 @@ public class LoginService implements LoginInterface {
 
         for(User user: list) {
             if(user.getUser_password().equals(password)){
-                return true;
+                return user;
             }
         }
-        return false;
+        return null;
     }
 }
