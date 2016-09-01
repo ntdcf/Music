@@ -16,8 +16,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="config/mybatis/testSQL.xml"/>
         <mapper resource="config/mybatis/UserTableMapper.xml"/>
+        <mapper resource="config/mybatis/MusicMenuMapper.xml"/>
     </mappers>
 
 </configuration>

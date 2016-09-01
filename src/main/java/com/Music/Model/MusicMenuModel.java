@@ -30,10 +30,27 @@ public class MusicMenuModel {
         session = sqlSessionFactory.openSession();
     }
 
-    public List find(String MusicInfo) {
-        String SQLClass = "com.Music.Model.MusicMapper";
-        List<Music> list=session.selectList(SQLClass,MusicInfo);
-//        List list = session.selectList(SQLClass,MusicInfo);
+    public List findMusicByName(String musicname) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.findMusicByName";
+        musicname = "%"+musicname+"%";
+        List<Music> list=session.selectList(SQLClass,musicname);
+        session.close();
+        return list;
+    }
+
+    public List findMusicBySinger(String singer) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.findMusicBySinger";
+        singer = "%"+singer+"%";
+        List<Music> list=session.selectList(SQLClass,singer);
+        session.close();
+        return list;
+    }
+
+    public List findMusicBySpecial(String special) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.findMusicBySpecial";
+        special = "%"+special+"%";
+        List<Music> list=session.selectList(SQLClass,special);
+        session.close();
         return list;
     }
 }
