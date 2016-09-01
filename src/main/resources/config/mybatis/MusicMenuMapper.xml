@@ -2,9 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.Music.Model">
-    <select id="MusicMapper" parameterType="String"
-            resultType="com.Music.Model.DataIntance.Music">
-        select * from Music
+<mapper namespace="com.Music.Model.MusicMenuMapper">
+    <resultMap id="MusicInfo" type="com.Music.Model.DataIntance.Music">
+        <id column="music_id" property="musicid"/>
+        <result column="music_name" property="musicname"/>
+        <result column="music_singer" property="musicsinger"/>
+        <result column="music_special" property="musicspecial"/>
+        <result column="music_time" property="musictime"/>
+        <result column="music_url" property="musicurl"/>
+        <result column="music_listened_count" property="listenedcount"/>
+        <result column="music_introduce" property="introduce"/>
+    </resultMap>
+
+    <select id="findMusicByName" parameterType="String" resultMap="MusicInfo">
+        SELECT * FROM musicmenu WHERE music_name LIKE #{musicname}
     </select>
+
+    <select id="findMusicBySinger" parameterType="String" resultMap="MusicInfo">
+        SELECT * FROM musicmenu WHERE music_singer LIKE #{musicsinger}
+    </select>
+
+    <select id="findMusicBySpecial" parameterType="String" resultMap="MusicInfo">
+        SELECT * FROM musicmenu WHERE music_special LIKE #{musicspecial}
+    </select>
+
+
 </mapper>

@@ -24,7 +24,7 @@
                     <li><a href="#">我的评论</a></li>
                     <li><a href="#">我的分享</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="MusicSearch" role="search">
+                <form class="navbar-form navbar-right" action="MusicSearch" method="GET" role="search">
                     <div class="form-group">
                         <input type="text" name="music_info" class="form-control" placeholder="Search">
                     </div>
