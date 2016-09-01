@@ -4,69 +4,69 @@ package com.Music.Model.DataIntance;
  * Created by gengzhi on 2016/8/31.
  */
 public class User {
-    private int User_id;
-    private String User_username;
-    private String User_password;
-    private String User_name;
-    private String User_sez;
-    private String User_age;
-    private String User_date;
+    private int userid;
+    private String username;
+    private String password;
+    private String name;
+    private boolean sex;
+    private int age;
+    private int date;
     private boolean admin;
 
-    public int getUser_id() {
-        return User_id;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUser_id(int user_id) {
-        User_id = user_id;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    public String getUser_username() {
-        return User_username;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_username(String user_username) {
-        User_username = user_username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUser_password() {
-        return User_password;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUser_password(String user_password) {
-        User_password = user_password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUser_name() {
-        return User_name;
+    public String getName() {
+        return name;
     }
 
-    public void setUser_name(String user_name) {
-        User_name = user_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUser_sez() {
-        return User_sez;
+    public boolean isSex() {
+        return sex;
     }
 
-    public void setUser_sez(String user_sez) {
-        User_sez = user_sez;
+    public void setSex(boolean sex) {
+        this.sex = sex;
     }
 
-    public String getUser_age() {
-        return User_age;
+    public int getAge() {
+        return age;
     }
 
-    public void setUser_age(String user_age) {
-        User_age = user_age;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getUser_date() {
-        return User_date;
+    public int getDate() {
+        return date;
     }
 
-    public void setUser_date(String user_date) {
-        User_date = user_date;
+    public void setDate(int date) {
+        this.date = date;
     }
 
     public boolean isAdmin() {
@@ -80,13 +80,13 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "User_id=" + User_id +
-                ", User_username='" + User_username + '\'' +
-                ", User_password='" + User_password + '\'' +
-                ", User_name='" + User_name + '\'' +
-                ", User_sez='" + User_sez + '\'' +
-                ", User_age='" + User_age + '\'' +
-                ", User_date='" + User_date + '\'' +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", age=" + age +
+                ", date=" + date +
                 ", admin=" + admin +
                 '}';
     }

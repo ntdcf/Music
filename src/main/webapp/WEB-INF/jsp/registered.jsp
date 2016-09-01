@@ -24,7 +24,7 @@
                 <img class="navbar-brand" src="images/logo.png">
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">畅音阁</a>
+                <a class="navbar-brand" href="index">畅音阁</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -44,11 +44,11 @@
     </nav>
 </div>
 
-<div class="login-form">
+<div class="login-form" id="regis">
     <div class="login-logo">欢迎新用户注册</div>
-    <div class="table-sty">
-        <form>
-            <table>
+    <div class="table-sty" >
+        <%--<form>--%>
+            <table id="msg_user">
                 <tr>
                     <td>*用户名：</td>
                     <td><input type="text" name="username" id="username" class="form-control" placeholder="请输入用户名"></td>
@@ -68,10 +68,8 @@
                 <tr>
                     <td>*性别：</td>
                     <td>
-                        <select name="user_sex" id="sex">
-                            <option value="1">男</option>
-                            <option value="0">女</option>
-                        </select>
+                        <input type="radio" name="sex" id="sex1" value="1">男
+                        <input type="radio" name="sex" id="sex2" value="0">女
                     </td>
                 </tr>
                 <tr>
@@ -80,14 +78,14 @@
                 </tr>
                 <tr>
                     <td>生日：</td>
-                    <td><input type="text" name="date" id="date" class="form-control" placeholder="请输入您的出生日期"></td>
+                    <td><input type="date" name="date" id="date" class="form-control" placeholder="请输入您的出生日期"></td>
                 </tr>
                 <tr>
                     <td><button class="btn btn-default" id="btn_reg">注册</button></td>
                     <td><button type="reset" class="btn btn-default">重置</button></td>
                 </tr>
             </table>
-        </form>
+        <%--</form>--%>
     </div>
 
 </div>

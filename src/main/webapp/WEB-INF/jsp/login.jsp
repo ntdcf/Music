@@ -24,11 +24,11 @@
                 <img class="navbar-brand" src="images/logo.png">
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">畅音阁</a>
+                <a class="navbar-brand" href="index">畅音阁</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">发现音乐<span class="sr-only">(current)</span></a></li>
+                    <li><a href="index">发现音乐<span class="sr-only">(current)</span></a></li>
                     <li><a href="#">我的收藏</a></li>
                     <li><a href="#">我的评论</a></li>
                     <li><a href="#">我的分享</a></li>
