@@ -21,13 +21,15 @@ public class LoginService implements LoginInterface {
 
     public User findUser(String username, String password) {
         User loginUser = new User();
-        loginUser.setUser_name(username);
+        loginUser.setUsername(username);
         userTableModel.create();
         List<User> list = userTableModel.findUser(username);
-
-        for(User user: list) {
-            if(user.getUser_password().equals(password)){
-                return user;
+        if(list != null) {
+            for(User user: list) {
+                if(user.getPassword().equals(password)){
+                    System.out.println(user);
+                    return user;
+                }
             }
         }
         return null;
