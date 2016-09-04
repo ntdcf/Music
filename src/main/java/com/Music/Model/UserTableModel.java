@@ -37,6 +37,20 @@ public class UserTableModel {
         return list;
     }
 
+    public List getUser() {
+        String Class = "com.Music.Model.UserTableMapper.getUser";
+        List<User> list = session.selectList(Class);
+        session.close();
+        return list;
+    }
+
+    public User getUser(int id) {
+        String Class = "com.Music.Model.UserTableMapper.getUserById";
+        User user = session.selectOne(Class,id);
+        session.close();
+        return user;
+    }
+
     public boolean addUser(User user) {
         String Class = "com.Music.Model.UserTableMapper.addUser";
         session.insert(Class, user);

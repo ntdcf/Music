@@ -26,5 +26,20 @@
         SELECT * FROM musicmenu WHERE music_special LIKE #{musicspecial}
     </select>
 
+    <select id="findMusicById" parameterType="int" resultMap="MusicInfo">
+        SELECT * FROM musicmenu WHERE music_id = #{musicid}
+    </select>
+
+    <select id="getMusic" resultMap="MusicInfo">
+        SELECT * FROM musicmenu
+    </select>
+
+    <select id="getTop" resultMap="MusicInfo">
+        SELECT * from musicmenu ORDER BY music_listened_count DESC LIMIT 5
+    </select>
+
+    <update id="addCount" parameterType="int">
+        UPDATE musicmenu SET music_listened_count = music_listened_count+1 WHERE music_id = #{musicid}
+    </update>
 
 </mapper>

@@ -7,4 +7,5 @@ import com.Music.Model.DataIntance.User;
  */
 public interface LoginInterface {
     public User findUser(String username, String password);
+    public User getUser(int userid);
 }

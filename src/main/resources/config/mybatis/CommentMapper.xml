@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Music.Model.CommentMapper">
+
+    <resultMap id="CommentInfo" type="com.Music.Model.DataIntance.Comment">
+        <id column="Comment_ID" property="commentid"/>
+        <result column="User_ID" property="userid"/>
+        <result column="Music_ID" property="musicid"/>
+        <result column="comment_Info" property="commentinfo"/>
+    </resultMap>
+
+    <select id="findMusicCommentByMusicId" parameterType="int" resultMap="CommentInfo">
+        SELECT * FROM comment WHERE Music_ID = #{musicid}
+    </select>
+
+    <select id="findMusicCommentByUserId" parameterType="int" resultMap="CommentInfo">
+        SELECT * FROM comment WHERE User_ID = #{userid}
+    </select>
+
+    <insert id="addComentByInfo" parameterType="com.Music.Model.DataIntance.Comment">
+        INSERT INTO comment (User_ID, Music_ID, comment_Info) VALUES (#{userid},#{musicid},#{commentinfo})
+    </insert>
+
+    <delete id="deleteCommetById" parameterType="int">
+        DELETE FROM comment WHERE Comment_ID = #{commentid}
+    </delete>
+
+</mapper>

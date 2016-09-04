@@ -18,6 +18,16 @@
         SELECT * FROM usertable where User_username = #{username}
     </select>
 
+    <select id="getUser" resultMap="UserInfo">
+        SELECT * FROM usertable
+    </select>
+
+    <select id="getUserById" resultMap="UserInfo">
+        SELECT * FROM usertable WHERE User_id = #{userid}
+    </select>
+
+
+
     <insert id="addUser" parameterType="com.Music.Model.DataIntance.User">
         INSERT INTO
           usertable (User_username,User_password,User_name,User_sex,User_age,User_date,admin)

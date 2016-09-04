@@ -18,6 +18,8 @@
     <mappers>
         <mapper resource="config/mybatis/UserTableMapper.xml"/>
         <mapper resource="config/mybatis/MusicMenuMapper.xml"/>
+        <mapper resource="config/mybatis/CommentMapper.xml"/>
+        <mapper resource="config/mybatis/CollectionMapper.xml"/>
     </mappers>
 
 </configuration>

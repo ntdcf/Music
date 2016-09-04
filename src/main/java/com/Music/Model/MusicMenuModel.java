@@ -53,4 +53,33 @@ public class MusicMenuModel {
         session.close();
         return list;
     }
+
+    public Music findMusicById(int MusicId) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.findMusicById";
+        Music music = (Music)session.selectOne(SQLClass,MusicId);
+        session.close();
+        return music;
+    }
+
+    public List<Music> getMusic() {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.getMusic";
+        List<Music> list = session.selectList(SQLClass);
+        session.close();
+        return list;
+    }
+
+    public boolean addCount(int musicid) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.addCount";
+        session.update(SQLClass,musicid);
+        session.commit();
+        session.close();
+        return true;
+    }
+
+    public List<Music> getMusicTop() {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.getTop";
+        List<Music> list = session.selectList(SQLClass);
+        session.close();
+        return list;
+    }
 }
