@@ -34,4 +34,10 @@ public class LoginService implements LoginInterface {
         }
         return null;
     }
+
+    @Override
+    public User getUser(int userid) {
+        userTableModel.create();
+        return userTableModel.getUser(userid);
+    }
 }

@@ -26,7 +26,7 @@ public class RegisteredService implements RegisteredInterface {
     @Override
     public boolean findUserByUserName(String username) {
         userTableModel.create();
-        if (userTableModel.findUser(username) == null) {
+        if (userTableModel.findUser(username).size() ==0) {
             return false;
         }
         return true;

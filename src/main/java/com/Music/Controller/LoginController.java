@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,9 +36,24 @@ public class LoginController {
         User user = login.findUser(username,password);
         if (user != null) {
             session.setAttribute("user_name", user.getUsername());
-            return "index";
+            session.setAttribute("user_id", user.getUserid());
+            return "redirect:index";
         }
         return "user";
+    }
+
+    @RequestMapping(value = "exit")
+    public String actionExit(HttpSession session) {
+        session.setAttribute("user_name", null);
+        session.setAttribute("user_id", null);
+        return "login";
+    }
+
+    @RequestMapping(value = "UserInfo")
+    public String getUser(HttpSession session,Model model){
+        int userid = (Integer) session.getAttribute("user_id");
+        model.addAttribute("user",login.getUser(userid));
+        return "UserInfo";
     }
 
     @RequestMapping(value = "addUser")

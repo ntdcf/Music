@@ -21,19 +21,17 @@
 
 <div class="navbar navbar-default navbar-inverse footer">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <form class="navbar-form navbar-left" role="search">
-                    <button  class="btn btn-default glyphicon glyphicon-step-backward"></button>
-                    <button  class="btn btn-default glyphicon glyphicon-play"></button>
-                    <button  class="btn btn-default glyphicon glyphicon-step-forward"></button>
+        <div class="row-fluid">
 
-                </form>
-                <div class="progress barfoot">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        <span class="sr-only">60% Complete</span>
-                    </div>
-                </div>
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+
+            <audio id="audio_player" src="music" controls="controls"></audio>
+
+            <ul class="nav navbar-nav ">
+                <!---->
+                <!--<form class="navbar-form navbar-right">-->
+                    <!--<button  class="btn btn-default glyphicon glyphicon-step-forward"></button>-->
+                <!--</form>-->
                 <li class="dropup play-list">
                     <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         播放列表
@@ -42,15 +40,11 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <ul class="list-group">
-                            <li class="list-group-item">你不是真正的快乐</li>
-                            <li class="list-group-item">Try</li>
-                            <li class="list-group-item">斑马，斑马</li>
-                            <li class="list-group-item">鞋子特大号</li>
-                            <li class="list-group-item">本草纲目</li>
                         </ul>
                     </ul>
                 </li>
             </ul>
+        </div>
         </div>
     </div>
 </div>
@@ -61,6 +55,6 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/index.js"></script>
 <script src="js/music_control.js"></script>
-
+<script src="js/play.js"></script>
 
 </html>

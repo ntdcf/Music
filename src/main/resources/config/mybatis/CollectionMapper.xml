@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Music.Model.CollectionMapper">
+
+    <resultMap id="CollectionInfo" type="com.Music.Model.DataIntance.Collection">
+        <id column="Collection_ID" property="collectionid"/>
+        <result column="User_ID" property="userid"/>
+        <result column="Music_ID" property="musicid"/>
+    </resultMap>
+    
+    <select id="findConllectionByInfo" parameterType="com.Music.Model.DataIntance.Collection"
+            resultMap="CollectionInfo">
+        SELECT * FROM collection WHERE User_ID=#{userid} AND Music_ID=#{musicid}
+    </select>
+
+    <select id="findConllectionByUserId" parameterType="int" resultMap="CollectionInfo">
+        SELECT * FROM collection WHERE User_ID=#{userid}
+    </select>
+
+    <insert id="addCollection" parameterType="com.Music.Model.DataIntance.Collection">
+        INSERT INTO
+          collection (User_ID,Music_ID)
+        VALUES
+          (#{userid},#{musicid})
+    </insert>
+
+    <delete id="deleteCollection" parameterType="com.Music.Model.DataIntance.Collection">
+        DELETE FROM collection WHERE User_ID=#{userid} AND Music_ID=#{musicid}
+    </delete>
+
+</mapper>

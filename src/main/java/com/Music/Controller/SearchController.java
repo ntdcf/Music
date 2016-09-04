@@ -22,10 +22,10 @@ public class SearchController {
     public String searchMusic(@RequestParam("music_info") String MusicInfo, Model model) {
         List<Music> list = searchInterface.findMusic(MusicInfo);
         Map<String,Music> musiclist = new HashMap<String, Music>();
+        //去重
         for (Music music: list) {
             musiclist.put(music.getMusicid(),music);
         }
-//        System.out.println(set);
         model.addAttribute("music", musiclist);
         return "searchRes";
     }

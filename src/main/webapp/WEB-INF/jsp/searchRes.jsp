@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/index.css"/>
+
 </head>
 <body>
 
@@ -27,10 +28,10 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">发现音乐<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="#">我的评论</a></li>
-                    <li><a href="#">我的分享</a></li>
+                    <li class="active"><a href="index">发现音乐<span class="sr-only">(current)</span></a></li>
+                    <li><a href="getCollection">我的收藏</a></li>
+                    <li><a href="Comment">我的评论</a></li>
+                    <%--<li><a href="#">我的分享</a></li>--%>
                 </ul>
                 <form class="navbar-form navbar-right" action="MusicSearch" method="GET" role="search">
                     <div class="form-group">
@@ -40,9 +41,12 @@
                 </form>
                 <ul class='nav navbar-nav'>
                     <li>
-                        <a href="${user_name == null ? "Login" : "#"}">
+                        <a href="${user_name == null ? "Login" : "UserInfo"}">
                             用户：${user_name == null? "登录" : user_name}
                         </a>
+                    </li>
+                    <li>
+                        ${user_name == null? "" : "<a href='exit'>退出登录</a>"}
                     </li>
                 </ul>
             </div>
@@ -85,7 +89,9 @@
                             <c:forEach var="music" items="${music}">
                                 <tr>
                                     <td>
-                                    ${music.value.musicname}
+                                        <a href="MusicInfo?music_info=${music.value.musicid}">
+                                                ${music.value.musicname}
+                                        </a>
                                     </td>
                                     <td>
                                     ${music.value.musicsinger}
@@ -100,7 +106,11 @@
                                     ${music.value.listenedcount}
                                     </td>
                                     <td>
-                                        下载
+                                        <a href="${music.value.musicurl}" download="download">下载</a>
+                                        <a value='{"musicid":${music.value.musicid},"userid":${user_id==null?0:user_id}}' class="collecte">
+                                            收藏
+                                        </a>
+                                        <a href="">播放</a>
                                     </td>
                                 </tr>
 
@@ -112,10 +122,9 @@
         </div>
     </div>
 </div>
-
-
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/collecte.js"></script>
 </html>
 

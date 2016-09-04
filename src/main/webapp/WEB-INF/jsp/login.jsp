@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/login.css">
+
 </head>
 <body>
 
@@ -29,9 +30,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="index">发现音乐<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="#">我的评论</a></li>
-                    <li><a href="#">我的分享</a></li>
+                    <li><a href="getCollection">我的收藏</a></li>
+                    <li><a href="Comment">我的评论</a></li>
+                    <%--<li><a href="#">我的分享</a></li>--%>
                 </ul>
                 <form class="navbar-form navbar-right" action="MusicSearch" role="search">
                     <div class="form-group">
@@ -70,6 +71,7 @@
     </div>
 
 </div>
+
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
