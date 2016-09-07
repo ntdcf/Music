@@ -12,6 +12,7 @@
         <result column="User_age"  property="age"/>
         <result column="User_date"  property="date"/>
         <result column="admin"  property="admin"/>
+        <result column="lockUser"   property="lock"/>
     </resultMap>
 
     <select id="findUser" parameterType="String" resultMap="UserInfo">
@@ -27,6 +28,9 @@
     </select>
 
 
+    <update id="lockUser" parameterType="com.Music.Model.DataIntance.User">
+        UPDATE usertable SET lockUser=#{lock} WHERE User_id=#{userid}
+    </update>
 
     <insert id="addUser" parameterType="com.Music.Model.DataIntance.User">
         INSERT INTO

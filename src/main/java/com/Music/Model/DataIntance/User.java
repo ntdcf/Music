@@ -12,6 +12,15 @@ public class User {
     private int age;
     private int date;
     private boolean admin;
+    private boolean lock;
+
+    public boolean isLock() {
+        return lock;
+    }
+
+    public void setLock(boolean lock) {
+        this.lock = lock;
+    }
 
     public int getUserid() {
         return userid;
@@ -88,6 +97,7 @@ public class User {
                 ", age=" + age +
                 ", date=" + date +
                 ", admin=" + admin +
+                ", lock=" + lock +
                 '}';
     }
 }

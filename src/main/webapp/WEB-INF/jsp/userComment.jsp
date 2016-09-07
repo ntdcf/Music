@@ -30,7 +30,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index">发现音乐<span class="sr-only">(current)</span></a></li>
                     <li><a href="getCollection">我的收藏</a></li>
-                    <li class="active"><a href="Comment">我的评论</a></li>
+                    <li ${user_id==userid?"class='active'":""}><a href="Comment">我的评论</a></li>
                     <%--<li><a href="#">我的分享</a></li>--%>
                 </ul>
                 <form class="navbar-form navbar-right" action="MusicSearch" method="GET" role="search">
@@ -66,6 +66,7 @@
                             <tr>
                                 <%--${music}--%>
                                 <td>
+
                                     用户${user_name}评论过歌曲《${music.get(comment.musicid).musicname}》：
                                 </td>
                                 <td>
@@ -85,6 +86,8 @@
         </div>
     </div>
 </div>
+<br/>
+<br/>
 
 </body>
 <script src="js/jquery.js"></script>

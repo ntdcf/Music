@@ -29,6 +29,17 @@ public class UserCommentController {
         int UserId = (int)session.getAttribute("user_id");
         model.addAttribute("comment", userCommentInterface.findUserComentById(UserId));
         model.addAttribute("music",userCommentInterface.getMusic());
+        model.addAttribute("userid",UserId);
+//        System.out.println(userCommentInterface.getMusic().get("1"));
+        return "userComment";
+    }
+
+    @RequestMapping(value = "adminComment")
+    public String getComment(@RequestParam("userid")int UserId, Model model) {
+
+        model.addAttribute("comment", userCommentInterface.findUserComentById(UserId));
+        model.addAttribute("music",userCommentInterface.getMusic());
+        model.addAttribute("userid",UserId);
 //        System.out.println(userCommentInterface.getMusic().get("1"));
         return "userComment";
     }
