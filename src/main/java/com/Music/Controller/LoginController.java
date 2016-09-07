@@ -10,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by luohao on 2016/8/29.
@@ -32,14 +35,18 @@ public class LoginController {
     public String actionLogin(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
-            HttpSession session) {
+            HttpSession session,
+            HttpServletResponse response) throws IOException {
         User user = login.findUser(username,password);
         if (user != null) {
+            if(user.isLock()){
+                return "lock";
+            }
             session.setAttribute("user_name", user.getUsername());
             session.setAttribute("user_id", user.getUserid());
             return "redirect:index";
         }
-        return "user";
+        return "login";
     }
 
     @RequestMapping(value = "exit")
@@ -52,6 +59,14 @@ public class LoginController {
     @RequestMapping(value = "UserInfo")
     public String getUser(HttpSession session,Model model){
         int userid = (Integer) session.getAttribute("user_id");
+
+        model.addAttribute("user",login.getUser(userid));
+        return "UserInfo";
+    }
+
+
+    @RequestMapping(value = "UserControl")
+    public String getUser(@RequestParam("userid") int userid, Model model){
         model.addAttribute("user",login.getUser(userid));
         return "UserInfo";
     }

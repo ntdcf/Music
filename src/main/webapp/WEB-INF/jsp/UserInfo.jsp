@@ -103,7 +103,8 @@
                                 用户类型：
                             </td>
                             <td>
-                                ${user.admin? "普通用户":"管理员"}
+                                ${(user.admin)? "管理员":"普通用户"}
+                                ${(user.admin&&user.userid==user_id)? "<a href='admin'>后台管理</a>":""}
                             </td>
                         </tr>
                         </tbody>
@@ -144,6 +145,8 @@
         </div>
     </div>
 </div>
+<br/>
+<br/>
 
 </body>
 <script src="js/jquery.js"></script>

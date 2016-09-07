@@ -58,4 +58,12 @@ public class UserTableModel {
         session.close();
         return true;
     }
+
+    public boolean lockUser(User user) {
+        String Class = "com.Music.Model.UserTableMapper.lockUser";
+        session.update(Class,user);
+        session.commit();
+        session.close();
+        return true;
+    }
 }

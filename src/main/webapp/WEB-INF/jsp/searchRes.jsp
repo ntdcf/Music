@@ -110,7 +110,7 @@
                                         <a value='{"musicid":${music.value.musicid},"userid":${user_id==null?0:user_id}}' class="collecte">
                                             收藏
                                         </a>
-                                        <a href="">播放</a>
+                                        <a class="play" value="${music.value.musicname}" about="${music.value.musicurl}">播放</a>
                                     </td>
                                 </tr>
 
@@ -122,9 +122,13 @@
         </div>
     </div>
 </div>
+<br/>
+<br/>
+
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/collecte.js"></script>
+<script src="js/addMusic.js"></script>
 </html>
 
