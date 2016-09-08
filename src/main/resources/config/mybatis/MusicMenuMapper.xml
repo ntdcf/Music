@@ -42,4 +42,11 @@
         UPDATE musicmenu SET music_listened_count = music_listened_count+1 WHERE music_id = #{musicid}
     </update>
 
+    <insert id="addMusic" parameterType="com.Music.Model.DataIntance.Music">
+        INSERT INTO
+          musicmenu (music_name,music_singer,music_special,music_time,music_url,music_listened_count,music_introduce)
+        VALUES
+          (#{musicname},#{musicsinger},#{musicspecial},#{musictime},#{musicurl},0,#{introduce})
+    </insert>
+
 </mapper>

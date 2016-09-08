@@ -106,4 +106,10 @@ public class MusicInfoService implements MusicInfoInterface {
         musicMenuModel.create();
         return musicMenuModel.getMusicTop();
     }
+
+    @Override
+    public boolean addMusic(Music music) {
+        musicMenuModel.create();
+        return musicMenuModel.addMusic(music);
+    }
 }

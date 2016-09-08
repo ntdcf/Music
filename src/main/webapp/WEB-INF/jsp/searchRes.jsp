@@ -74,9 +74,6 @@
                                     专辑
                                 </td>
                                 <td>
-                                    歌曲时长
-                                </td>
-                                <td>
                                     收听量
                                 </td>
                                 <td>
@@ -99,9 +96,7 @@
                                     <td>
                                     ${music.value.musicspecial}
                                     </td>
-                                    <td>
-                                    ${music.value.musictime}
-                                    </td>
+
                                     <td>
                                     ${music.value.listenedcount}
                                     </td>
@@ -110,7 +105,11 @@
                                         <a value='{"musicid":${music.value.musicid},"userid":${user_id==null?0:user_id}}' class="collecte">
                                             收藏
                                         </a>
-                                        <a class="play" value="${music.value.musicname}" about="${music.value.musicurl}">播放</a>
+                                        <a class="play"
+                                           value="${music.value.musicname}"
+                                           about="${music.value.musicurl}"
+                                           name="${music.value.musicid}"
+                                        >播放</a>
                                     </td>
                                 </tr>
 

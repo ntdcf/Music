@@ -11,11 +11,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +37,9 @@ public class MusicInfoController {
     public String index(@RequestParam("music_info") int MusicId, Model model) {
         List<Comment> list = musicInfoInterface.getCommentByMusicId(MusicId);
         model.addAttribute("user",musicInfoInterface.getUser());
-        model.addAttribute("music",musicInfoInterface.getMusicInfoByMusicId(MusicId));
+        Music music = musicInfoInterface.getMusicInfoByMusicId(MusicId);
+        model.addAttribute("music",music);
+//        model.addAttribute("time", new SimpleDateFormat("mm:ss").format(music.getMusictime()));
         model.addAttribute("comment",list);
         return "music";
     }
@@ -79,5 +87,44 @@ public class MusicInfoController {
     public String deleteCollection(HttpSession session, Model model, Collection collection) {
         musicInfoInterface.deleteCollection(collection);
         return getCollection(session, model);
+    }
+
+    @RequestMapping(value = "updateMusic")
+    public String update() {
+        return "update";
+    }
+
+    @RequestMapping(value = "update")
+    public String updateMusic(@RequestParam("musicname")String musicname,
+                       @RequestParam("musicsinger")String musicsinger,
+                       @RequestParam("musicspecial")String musicspecial,
+                       @RequestParam("musictime")String musictime,
+                       @RequestParam("musicfile")MultipartFile musicfile,
+                       @RequestParam("text")String introduce,
+                       HttpServletRequest request,
+                       Model model) throws ParseException, IOException {
+        Music music = new Music();
+        music.setMusicname(musicname);
+        music.setMusicsinger(musicsinger);
+        music.setMusicspecial(musicspecial);
+        music.setMusictime((int)new SimpleDateFormat("yyyy/MM/dd mm:ss").parse("2000/1/1 00:"+musictime).getTime());
+        music.setIntroduce(introduce);
+        String name = String.valueOf(musicfile.getOriginalFilename().hashCode())+".mp3";
+        music.setMusicurl("music/"+name);
+//        System.out.println(music);
+        File file = new File(request.getServletContext().getRealPath("/music"), name);
+        musicfile.transferTo(file);
+        musicInfoInterface.addMusic(music);
+
+        model.addAttribute("ok","上传成功！");
+        return "update";
+    }
+
+    @RequestMapping(value = "add")
+    public void add(@RequestParam("musicid")int musicid) {
+        System.out.println(musicid);
+//        JSONObject jsonObject = new JSONObject(music);
+        musicInfoInterface.addCountListen(musicid);
+//        return 1;
     }
 }
