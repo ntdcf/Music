@@ -82,4 +82,12 @@ public class MusicMenuModel {
         session.close();
         return list;
     }
+
+    public boolean addMusic(Music music) {
+        String SQLClass = "com.Music.Model.MusicMenuMapper.addMusic";
+        session.insert(SQLClass,music);
+        session.commit();
+        session.close();
+        return true;
+    }
 }

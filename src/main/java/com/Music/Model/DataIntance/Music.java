@@ -1,5 +1,7 @@
 package com.Music.Model.DataIntance;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /**
  * Created by luohao on 2016/8/30.
  */
@@ -12,6 +14,7 @@ public class Music {
     private String musicurl;
     private int listenedcount;
     private String introduce;
+    private MultipartFile musicfile;
 
     public String getMusicid() {
         return musicid;
@@ -77,6 +80,14 @@ public class Music {
         this.introduce = introduce;
     }
 
+    public MultipartFile getMusicfile() {
+        return musicfile;
+    }
+
+    public void setMusicfile(MultipartFile musicfile) {
+        this.musicfile = musicfile;
+    }
+
     @Override
     public String toString() {
         return "Music{" +
@@ -87,7 +98,8 @@ public class Music {
                 ", musictime=" + musictime +
                 ", musicurl='" + musicurl + '\'' +
                 ", listenedcount=" + listenedcount +
-                ", introduce=" + introduce +
+                ", introduce='" + introduce + '\'' +
+                ", musicfile=" + musicfile +
                 '}';
     }
 }

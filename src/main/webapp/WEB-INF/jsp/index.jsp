@@ -91,9 +91,7 @@
                                 <td>
                                 ${music.musicspecial}
                                 </td>
-                                <td>
-                                ${music.musictime}
-                                </td>
+
                                 <td>
                                         ${music. listenedcount}
                                 </td>
@@ -102,7 +100,11 @@
                                     <a value='{"musicid":${music.musicid},"userid":${user_id==null?0:user_id}}' class="collecte">
                                         收藏
                                     </a>
-                                    <a class="play" value="${music.musicname}" about="${music.musicurl}">播放</a>
+                                    <a class="play"
+                                       value="${music.musicname}"
+                                       about="${music.musicurl}"
+                                       name="${music.musicid}"
+                                    >播放</a>
                                 </td>
 
                             </tr>

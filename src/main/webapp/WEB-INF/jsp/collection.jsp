@@ -64,9 +64,7 @@
                             <td>
                                 专辑
                             </td>
-                            <td>
-                                时间
-                            </td>
+
                             <td>
                                 播放量
                             </td>
@@ -87,9 +85,7 @@
                             <td>
                                 ${music.get(collection.musicid).musicspecial}
                             </td>
-                            <td>
-                                ${music.get(collection.musicid).musictime}
-                            </td>
+
                             <td>
                                 ${music.get(collection.musicid).listenedcount}
                             </td>
@@ -98,7 +94,11 @@
                                 <a href="deleteCollection?userid=${user_id}&musicid=${collection.musicid}">
                                     取消
                                 </a>
-                                <a class="play" value="${music.get(collection.musicid).musicname}" about="${music.get(collection.musicid).musicurl}">播放</a>
+                                <a class="play"
+                                   value="${music.get(collection.musicid).musicname}"
+                                   about="${music.get(collection.musicid).musicurl}"
+                                   name="${collection.musicid}"
+                                >播放</a>
                             </td>
                         </tr>
                         </c:forEach>

@@ -56,7 +56,8 @@
 
 <div class="container-fluid">
     <div>
-        <h3 class="music-list">搜索结果</h3>
+        <h3 class="music-list"></h3>
+        <h3 class="music-list">搜索结果  <a href="updateMusic">上传歌曲</a></h3>
         <div class="container-fluid music-list">
             <div class="row-fluid">
                 <div class="span12">

@@ -20,4 +20,6 @@ public interface MusicInfoInterface {
     public boolean deleteCollection(Collection collection);
     public Map getMusic();
     public List getMusicByTop();
+    public boolean addMusic(Music music);
+//    public boolean addCount(int id);
 }
